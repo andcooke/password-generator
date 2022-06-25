@@ -4,13 +4,8 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
 
-  // *** CHANGE BACK TO generatePassword();
-  // *** CHANGE BACK TO generatePassword();
-  // *** CHANGE BACK TO generatePassword();
   var password = generatePassword();
-  // *** CHANGE BACK TO generatePassword();
-  // *** CHANGE BACK TO generatePassword();
-  // *** CHANGE BACK TO generatePassword();
+
 
   var passwordText = document.querySelector("#password");
 
