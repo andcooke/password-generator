@@ -33,7 +33,7 @@ const specChar = "`~!@#$%^&*()-_+={[}]|\\:;\"\'<,>.?/";
 function generatePassword() {
 
   let passwordOptions = [];
-  let finalPassword = "";
+  let finalPassword = [];
 
   let initialCheck = window.prompt("\nConfirm your desired password length below:\n\n(Must be between 8-128 characters.)\n");
   
@@ -57,57 +57,68 @@ function generatePassword() {
   }
   
 
-//push upper case string into passwordOptions array
+//push upper case string into passwordOptions 
   function getUpperCase() {
     let incUppers = window.confirm("\nConfirm if you would like to include upper-case characters in your password.");
     if (!incUppers) {
-      return null;
+      return getLowerCase ();
     } else {
       passwordOptions.push(upperAlpha);
       return getLowerCase ();
     }
   };
 
+//push lower case string into passwordOptions 
   function getLowerCase() {
     let incLowers = window.confirm("\nConfirm if you would like to include lower-case characters in your password.");
     if (!incLowers) {
-      return null;
+      return getNumbers ();
     } else {
       passwordOptions.push(lowerAlpha);
       return getNumbers ();
     }
   }
 
+//push number into passwordOptions 
   function getNumbers () {
     let incNumbers = window.confirm("\nConfirm if you would like to include numbers in your password.")
     if (!incNumbers) {
-      return null;
+      return getSpecials ();
     } else {
       passwordOptions.push(numbers);
       return getSpecials ();
     }
   }
 
+  //push special characters into passwordOptions
   function getSpecials () {
     let incSpecials = window.confirm("\nConfirm if you would like to include special characters in your password.")
     if (!incSpecials) {
-      return null;
+      return makePassword ()
     } else {
       passwordOptions.push(specChar);
+      //console.log(passwordOptions);
       return makePassword ()
     }
   }
 
-  function makePassword () {
-    let charString = passwordOptions.join("");
-    
-    for (let i = 0; i <= passwordLength; i++) {
-      finalPassword.push(charString[Math.random]
-    }
-  }
-  
 
-}
+
+
+
+  function makePassword () {
+//join array elements so that there are no commas
+    let charString = passwordOptions.join("");
+//split each individual array element so there are commas between every index
+    let charArray = charString.split("");
+//push a random character from the split characters array into the finalPassword array passwordLength times with a for-loop
+    for (let i = 0; i < passwordLength; i++) {
+      finalPassword.push(charArray[(parseInt(Math.random()*charArray.length))]);
+    }
+//return  the finalPassword array after having getting rid of the commas.
+    return finalPassword.join("");
+  }
+};
 
 
 
