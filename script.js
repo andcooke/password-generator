@@ -30,7 +30,7 @@ function generatePassword() {
   let passwordOptions = [];
   let finalPassword = [];
 
-  let initialCheck = window.prompt("\nConfirm your desired password length below:\n\n(Must be between 8-128 characters.)\n");
+  let initialCheck = window.prompt("\nConfirm your desired password length below:\n\n(Must be between 8-128.)\n");
   
   //turn input into a number
   let passwordLength = Number(initialCheck);

@@ -1,98 +1,47 @@
-## Your Task
+## Description
 
-This week's Challenge requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+This is a random password generator. It makes a randomized password between 8 - 128 characters. It also allows the user to choose what kind of characters to include and exclue from the password.
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of password special characters](https://www.owasp.org/index.php/Password_special_characters) from the OWASP Foundation.
+## Usage
 
-## User Story
+To start, the user should press the red "Generate Password" button at the bottom of the screen.
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+![screenshot of Generate Password landing page](./Assets/Images/password%20generator.png)
 
-## Acceptance Criteria
+Then a promp window asks the user how long they want their password to be. They can only make a password that is between 8 and 128 characters long.
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+![screenshot of the password length prompt](./Assets/Images/confirm-length.png)
 
-## Mock-Up
+If the user does not submit an integer between 8 and 128, they will give a fail screen. For example, if the user were to submit "ten characters" this would give a fail screen. They should instead just type the number "10". 
 
-The following image shows the web application's appearance and functionality:
+![screenshot of the password length fail window](./Assets/Images/length-fail.png)
 
-![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
+The fail screen will also trigger if the user submits a fraction, decimal, a number outside of the specified range, or letters in the prompt.
 
-## Grading Requirements
+After the user has decided on the desired length they will be prompted with 4 different windows in succession, allowing the user to decide what kind of characters to include in the password.
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+![screenshot of the upper-case characters confirmation window](./Assets/Images/confirm-upper.png)
 
-This Challenge is graded based on the following criteria: 
+Pressing "OK" confirms that the user would like to include the above characters in their password.
 
-### Technical Acceptance Criteria: 40%
+Pressing "Cancel" excludes the characters and moves the user along to the next character type.
 
-* Satisfies all of the preceding acceptance criteria.
+Following the upper-case prompt is a prompt for lower-case characters, numbers, and special characters in that order.
 
-### Deployment: 32%
 
-* Application deployed at live URL.
+Once all the character option prompts have been run, the generator will supply the user with a password of their desired length and character selections.
 
-* Application loads with no errors.
+![screenshot of an example password made by this password generator](./Assets/Images/final-password.png)
 
-* Application GitHub URL submitted.
+The above example is the result of typing "25" in the password-length prompt, and clicking "OK" on the upper-case prompt, "Cancel" on the lower-case prompt, then "OK" on the numbers and special characters prompts.
 
-* GitHub repository that contains application code.
+The user can then select the password, copy it and set it for any login they may need.
 
-### Application Quality: 15%
+## Credits
 
-* Application user experience is intuitive and easy to navigate.
 
-* Application user interface style is clean and polished.
+Credit to Kurt Bixby (https://github.com/kurtbixby) for helping with the some of the prompt language.
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
+Also, thanks to the University of Texas for the initial CSS and HTML. 
 
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
-- - -
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+The rest is mine.
