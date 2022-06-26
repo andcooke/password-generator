@@ -102,6 +102,10 @@ function generatePassword() {
 
 
   function makePassword () {
+    if (passwordOptions.length === 0) {
+      window.alert("\nYou must include at least 1 character type.")
+      return "Try again by re-clicking the Generate Password button."
+    } else {
 //join array elements so that there are no commas
     let charString = passwordOptions.join("");
 //split each individual array element so there are commas between every index
@@ -112,6 +116,7 @@ function generatePassword() {
     }
 //return  the finalPassword array after having getting rid of the commas.
     return finalPassword.join("");
+    }
   }
 };
 
